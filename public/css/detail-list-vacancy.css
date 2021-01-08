@@ -1,0 +1,23 @@
+@media only screen and (max-width : 480px) {
+        .row.display-flex>[class*='col-']>a>.thumbnail>img {
+            width: 100%;
+            height: 200px;
+            /* force image's height */
+
+            /* force image fit inside it's "box" */
+            -webkit-object-fit: cover;
+            -moz-object-fit: cover;
+            -ms-object-fit: cover;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+
+        .dropdown-menu>li>a {
+            color: white;
+            text-align: center;
+        }
+
+        #submenu-separator {
+            border-bottom: 2px solid white;
+        }
+}

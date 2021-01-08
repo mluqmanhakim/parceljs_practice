@@ -1,0 +1,133 @@
+* {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.section {
+    margin-top: 10px;
+}
+
+#diskon {
+    font-size: 18px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+#info-promo>[class*='col-']>.alert {
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+@media screen and (min-width: 601px) {
+    #image_for_mobile {
+        display: none;
+    }
+
+    #read-more-description *,
+    #pengajar,
+    #course-review {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    #image_for_mobile {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #image_for_desktop {
+        display: none;
+    }
+
+    #info-promo>[class*='col-']>.alert>h4 {
+        font-size: 16px;
+    }
+
+    #read-more-description *,
+    #pengajar,
+    #course-review {
+        font-size: 16px;
+    }
+
+    #course-name {
+        font-size: 24px;
+    }
+}
+
+.vertical-alignment-helper {
+    display: table;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    /* This makes sure that we can still click outside of the modal to close it */
+}
+
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width: inherit;
+    max-width: inherit;
+    /* For Bootstrap 4 - to avoid the modal window stretching full width */
+    height: inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+    pointer-events: all;
+}
+
+.btn {
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+
+p {
+    font-size: 17px;
+}
+
+li {
+    font-size: 17px;
+}
+
+.navbar-collapse {
+
+    visibility: hidden;
+}
+
+.social-menu {
+
+    display: none;
+}
+
+.question-survey {
+
+    display: none;
+}
+
+.logo-brand-navbar {
+    pointer-events: none;
+    cursor: default;
+}
+
+.colorlib {
+    pointer-events: none;
+    cursor: default;
+}
+
+.navbar-toggle {
+    visibility: hidden;
+}
+
+.navbar-header {
+    display: none;
+}
+
+.mainmenu-area {
+    display: none;
+}
