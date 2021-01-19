@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
-import "@fortawesome/fontawesome-free/css/all.css";
-
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import ImageIcon from "@material-ui/icons/Image";
 import Typography from "@material-ui/core/Typography";
 import List from "@material-ui/core/List";
@@ -13,23 +8,53 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
+import LocalAtmIcon from "@material-ui/icons/LocalAtm";
+import CardMembershipIcon from "@material-ui/icons/CardMembership";
+import CollectionsIcon from "@material-ui/icons/Collections";
+import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
+import PeopleOutlineIcon from "@material-ui/icons/PeopleOutline";
+import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 
-class Feature extends Component {
-  render() {
-    return (
-      <div className="Feature">
-        <Typography variant="h4" gutterBottom>
+const useStyles = makeStyles((theme) => ({
+  root: {
+    position: "relative",
+    padding: theme.spacing(6),
+    [theme.breakpoints.down("md")]: {
+      padding: theme.spacing(3),
+    },
+  },
+  title : {
+    paddingBottom: theme.spacing(3),
+  }
+}));
+
+function Feature() {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <Grid container justify="center" className={classes.title} >
+        <Typography variant="h5" gutterBottom align="center">
           Keuntungan Belajar di Pintaar
         </Typography>
+      </Grid>
 
-        <Grid container spacing={2} direction="row" alignItems="stretch">
-          <Grid item xs={12} md={3}>
-            <Paper className="paper" variant="outlined">
-              
-              <ImageIcon style={{ fontSize: 100 }}></ImageIcon>
-              
+      <Grid container spacing={2} direction="row" alignItems="stretch">
+        <Grid item xs={12} md={3}>
+          <Card className={classes.card}>
+            <CardContent>
+              <Grid container justify="center">
+                <ImageIcon
+                  className={classes.image}
+                  style={{ fontSize: 100 }}
+                ></ImageIcon>
+              </Grid>
 
-              <Typography variant="h4" gutterBottom>
+              <Typography variant="h5" gutterBottom>
                 Belajar Dasar Desain Grafis dan Edit Video dari 0
               </Typography>
 
@@ -71,32 +96,48 @@ class Feature extends Component {
                   <ListItemText primary="Skecthup dan Autocad untuk desain teknik" />
                 </ListItem>
               </List>
-            </Paper>
-          </Grid>
+            </CardContent>
+          </Card>
+        </Grid>
 
-          <Grid item xs={12} md={3}>
-            <Paper className="paper" variant="outlined">
-              <div className="box-icon">
-                <i className="fas fa-list-ol fa-7x"></i>
-              </div>
-              <h3>Belajar dengan Terstruktur</h3>
-              <br />
-              <p>
+        <Grid item xs={12} md={3}>
+          <Card className={classes.card}>
+            <CardContent>
+              <Grid container justify="center">
+                <FormatListNumberedIcon
+                  className={classes.image}
+                  style={{ fontSize: 100 }}
+                ></FormatListNumberedIcon>
+              </Grid>
+
+              <Typography variant="h5" gutterBottom>
+                Belajar dengan Terstruktur
+              </Typography>
+
+              <Typography>
                 Kamu tidak perlu lagi bingung karena belajar secara acak, disini{" "}
                 <b>kamu akan belajar dengan terstruktur, tahap-demi-tahap.</b>
                 Tentunya, dapat membantumu belajar dengan mudah dan cepat.
-              </p>
-            </Paper>
-          </Grid>
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
 
-          <Grid item xs={12} md={3}>
-            <Paper className="paper" variant="outlined">
-              <div className="box-icon">
-                <i className="fas fa-chalkboard-teacher fa-7x"></i>
-              </div>
-              <h3>Dimentoring oleh Praktisi Berpengalaman</h3>
-              <br />
-              <p>
+        <Grid item xs={12} md={3}>
+          <Card className={classes.card}>
+            <CardContent>
+              <Grid container justify="center">
+                <VerifiedUserIcon
+                  className={classes.image}
+                  style={{ fontSize: 100 }}
+                ></VerifiedUserIcon>
+              </Grid>
+
+              <Typography variant="h5" gutterBottom>
+                Dimentoring oleh Praktisi Berpengalaman
+              </Typography>
+
+              <Typography>
                 Semua kelas programming yang kamu dapatkan di ajarkan oleh{" "}
                 <b>praktisi dan profesional di bidangnya.</b>
                 <br />
@@ -107,18 +148,26 @@ class Feature extends Component {
                 <br />
                 Bahkan, kamu juga mendapatkan kesempatan untuk{" "}
                 <b>bertanya ke mereka untuk konsultasi jika ada kebingungan.</b>
-              </p>
-            </Paper>
-          </Grid>
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
 
-          <Grid item xs={12} md={3}>
-            <Paper className="paper" variant="outlined">
-              <div className="box-icon">
-                <i className="fas fa-comments fa-7x"></i>
-              </div>
-              <h3>Punya Komunitas</h3>
-              <br />
-              <p>
+        <Grid item xs={12} md={3}>
+          <Card className={classes.card}>
+            <CardContent>
+              <Grid container justify="center">
+                <PeopleOutlineIcon
+                  className={classes.image}
+                  style={{ fontSize: 100 }}
+                ></PeopleOutlineIcon>
+              </Grid>
+
+              <Typography variant="h5" gutterBottom>
+                Punya Komunitas
+              </Typography>
+
+              <Typography>
                 Kamu tidak suka belajar sendiri dan tidak teman?
                 <br />
                 <br />
@@ -129,79 +178,111 @@ class Feature extends Component {
                   Jumlah membernya sudah ribuan untuk belajar, berdiskusi dan
                   berkolaborasi dengan murid lainnya.
                 </b>
-              </p>
-            </Paper>
-          </Grid>
+              </Typography>
+            </CardContent>
+          </Card>
         </Grid>
+      </Grid>
 
-        <Grid container spacing={2} direction="row" alignItems="stretch">
-          <Grid item xs={12} md={3}>
-            <Paper className="paper" variant="outlined">
-              <div className="box-icon">
-                <i className="fas fa-clock fa-7x"></i>
-              </div>
-              <h3>Bisa Belajar Kapanpun dan Dimanapun</h3>
-              <br />
-              <p>
+      <Grid container spacing={2} direction="row" alignItems="stretch">
+        <Grid item xs={12} md={3}>
+          <Card className={classes.card}>
+            <CardContent>
+              <Grid container justify="center">
+                <AccessAlarmIcon
+                  className={classes.image}
+                  style={{ fontSize: 100 }}
+                ></AccessAlarmIcon>
+              </Grid>
+
+              <Typography variant="h5" gutterBottom>
+                Bisa Belajar Kapanpun dan Dimanapun
+              </Typography>
+
+              <Typography>
                 Kamu punya waktu terbatas dan tidak bebas? Serta tidak bisa
                 datang ke tempat? Karena sibuk bekerja atau kuliah?
                 <br />
                 <br />
                 Oleh karena itu, belajar online adalah solusinya, karena kamu{" "}
                 <b>bisa belajar dimana saja dan kapan saja.</b>
-              </p>
-            </Paper>
-          </Grid>
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
 
-          <Grid item xs={12} md={3}>
-            <Paper className="paper" variant="outlined">
-              <div className="box-icon">
-                <i className="fas fa-edit fa-7x"></i>
-              </div>
-              <h3>Banyak Studi Kasus</h3>
-              <br />
-              <p>
+        <Grid item xs={12} md={3}>
+          <Card className={classes.card}>
+            <CardContent>
+              <Grid container justify="center">
+                <CollectionsIcon
+                  className={classes.image}
+                  style={{ fontSize: 100 }}
+                ></CollectionsIcon>
+              </Grid>
+
+              <Typography variant="h5" gutterBottom>
+                Banyak Studi Kasus
+              </Typography>
+
+              <Typography>
                 Kalau kamu mengambil kelas ini, kamu akan mendapatkan banyak
                 latihan serta studi kasus, yang membantumu belajar desain dengan
                 baik
-              </p>
-            </Paper>
-          </Grid>
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
 
-          <Grid item xs={12} md={3}>
-            <Paper className="paper" variant="outlined">
-              <div className="box-icon">
-                <i className="fas fa-file-alt fa-7x"></i>
-              </div>
-              <h3>Dapat sertifikat</h3>
-              <br />
-              <p>
+        <Grid item xs={12} md={3}>
+          <Card className={classes.card}>
+            <CardContent>
+              <Grid container justify="center">
+                <CardMembershipIcon
+                  className={classes.image}
+                  style={{ fontSize: 100 }}
+                ></CardMembershipIcon>
+              </Grid>
+
+              <Typography variant="h5" gutterBottom>
+                Dapat e-certificate
+              </Typography>
+
+              <Typography>
                 Kamu juga akan mendapatkan sertifikat jika kamu membutuhkannya
                 setelah mengambil kelas ini.
-              </p>
-            </Paper>
-          </Grid>
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
 
-          <Grid item xs={12} md={3}>
-            <Paper className="paper" variant="outlined">
-              <div className="box-icon">
-                <i className="fas fa-shield-alt fa-7x"></i>
-              </div>
-              <h3>Garansi 100%, 7 hari uang kembali</h3>
-              <br />
-              <p>
+        <Grid item xs={12} md={3}>
+          <Card className={classes.card}>
+            <CardContent>
+              <Grid container justify="center">
+                <LocalAtmIcon
+                  className={classes.image}
+                  style={{ fontSize: 100 }}
+                ></LocalAtmIcon>
+              </Grid>
+
+              <Typography variant="h5" gutterBottom>
+                Garansi 100%, 7 Hari Uang Kembali
+              </Typography>
+
+              <Typography>
                 Kamu takut kelasnya tidak sesuai ekspetasi mu?
                 <br />
                 <br />
                 Tenang, kami punya 100% uang garansi yang bisa kamu tuntut jika
                 kamu tidak puas dengan kelasnya.
-              </p>
-            </Paper>
-          </Grid>
+              </Typography>
+            </CardContent>
+          </Card>
         </Grid>
-      </div>
-    );
-  }
+      </Grid>
+    </div>
+  );
 }
 
 export default Feature;

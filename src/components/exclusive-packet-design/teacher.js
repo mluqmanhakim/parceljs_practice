@@ -1,97 +1,102 @@
 import React, { Component } from "react";
 
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
-import "@fortawesome/fontawesome-free/css/all.css";
-
-import "./teacher.css";
-
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import ImageIcon from "@material-ui/icons/Image";
+import { makeStyles } from "@material-ui/core/styles";
+import Avatar from "@material-ui/core/Avatar";
+import Typography from "@material-ui/core/Typography";
+import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
 
-class Teacher extends Component {
-  render() {
-    return (
-      <div className="Teacher">
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-sm-6">
-              <h3>Tim Pengajar Pintaar</h3>
-            </div>
-          </div>
+const useStyles = makeStyles((theme) => ({
+  content: {
+    padding: theme.spacing(6, 24),
+    [theme.breakpoints.down("md")]: {
+      padding: theme.spacing(3),
+    },
+  },
+  image: {
+    width: theme.spacing(10),
+    height: theme.spacing(10),
+    margin: "auto",
+  },
+  title: {
+    paddingBottom: theme.spacing(3),
+  },
+}));
 
-          <div className="row text-center">
-            <div className="col-xs-12 col-sm-4 col-md-4">
-              <br />
-              <img
-                className="profile-user-img img-responsive rounded-circle center-block"
-                src="https://storage.googleapis.com/pintaar-web.appspot.com/course-photo/D7U6P05aSeMhu8fkDbYkOw7iyuKP9cXrFOaGKuhu.jpeg"
-                alt="User profile picture"
-                
-              />
-              <br />
-              <p>Fathur - Video Editor</p>
-            </div>
-            <div className="col-xs-12 col-sm-4 col-md-4">
-              <br />
-              <img
-                className="profile-user-img img-responsive rounded-circle center-block"
-                src="https://storage.googleapis.com/pintaar-web.appspot.com/course-photo/egCwNpwj6dqH02aFBJ1UfHyahSkOJUY5hegjVrRl.jpeg"
-                alt="User profile picture"
-                
-              />
-              <br />
-              <p>Dean - Desainer</p>
-            </div>
-            <div className="col-xs-12 col-sm-4 col-md-4">
-              <br />
-              <img
-                className="profile-user-img img-responsive rounded-circle center-block"
-                src="https://storage.googleapis.com/pintaar-web.appspot.com/course-photo/OpSMJF8dhPqYCpxzyHeRFu6wAsi0H49Y9gHRtQUJ.jpeg"
-                alt="User profile picture"
-                
-              />
-              <br />
-              <p>Gunawan - Desainer</p>
-            </div>
-          </div>
-          <div className="row text-center">
-            <div className="col-xs-12 col-sm-4 col-md-4">
-              <br />
-              <img
-                className="profile-user-img img-responsive rounded-circle center-block"
-                src="https://storage.googleapis.com/pintaar-web.appspot.com/course-photo/y3RdB3qjYlHwSVMPPeTo8Rq53oIclg44ERvcMoq0.jpeg"
-                alt="User profile picture"
-                
-              />
-              <br />
-              <p>Benrik - Trainer Autocad</p>
-            </div>
-            <div className="col-xs-12 col-sm-4 col-md-4">
-              <br />
-              <img
-                className="profile-user-img img-responsive rounded-circle center-block"
-                src="https://storage.googleapis.com/pintaar-web.appspot.com/course-photo/rrj81RNPbUDvWOU8Lde1AyZTd6U0xn6ryTRlAnHi.jpeg"
-                alt="User profile picture"
-                
-              />
-              <br />
-              <p>Imron - Desainer</p>
-            </div>
-            <div className="col-xs-12 col-sm-4 col-md-4">
-              <br />
-              <p className="text-primary">
-                <i className="fas fa-users fa-7x"></i>
-              </p>
-              <p>+ Puluhan Pengajar Praktisi Lainnya</p>
-              <br></br>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+function Teacher() {
+  const classes = useStyles();
+  return (
+    <div className={classes.content}>
+      <Grid
+        container
+        justify="center"
+        alignItems="center"
+        className={classes.title}
+      >
+        <Typography variant="h5" align="center">
+          Tim Pengajar Pintaar
+        </Typography>
+      </Grid>
+
+      <Grid container justify="center" alignItems="center" spacing={2}>
+        <Grid item xs={6} md={4} align="center">
+          <Avatar
+            className={classes.image}
+            alt="Image"
+            src="https://storage.googleapis.com/pintaar-web.appspot.com/course-photo/D7U6P05aSeMhu8fkDbYkOw7iyuKP9cXrFOaGKuhu.jpeg"
+          />
+
+          <Typography>Fathur - Video Editor</Typography>
+        </Grid>
+        <Grid item xs={6} md={4} align="center">
+          <Avatar
+            className={classes.image}
+            alt="Image"
+            src="https://storage.googleapis.com/pintaar-web.appspot.com/course-photo/egCwNpwj6dqH02aFBJ1UfHyahSkOJUY5hegjVrRl.jpeg"
+          />
+
+          <Typography>Dean - Desainer</Typography>
+        </Grid>
+        <Grid item xs={6} md={4} align="center">
+          <Avatar
+            className={classes.image}
+            alt="Image"
+            src="https://storage.googleapis.com/pintaar-web.appspot.com/course-photo/OpSMJF8dhPqYCpxzyHeRFu6wAsi0H49Y9gHRtQUJ.jpeg"
+          />
+
+          <Typography>Gunawan - Desainer</Typography>
+        </Grid>
+
+        <Grid item xs={6} md={4} align="center">
+          <Avatar
+            className={classes.image}
+            alt="Image"
+            src="https://storage.googleapis.com/pintaar-web.appspot.com/course-photo/rrj81RNPbUDvWOU8Lde1AyZTd6U0xn6ryTRlAnHi.jpeg"
+          />
+
+          <Typography>Imron - Desainer</Typography>
+        </Grid>
+
+        <Grid item xs={6} md={4} align="center">
+          <Avatar
+            className={classes.image}
+            alt="Image"
+            src="https://storage.googleapis.com/pintaar-web.appspot.com/course-photo/y3RdB3qjYlHwSVMPPeTo8Rq53oIclg44ERvcMoq0.jpeg"
+          />
+
+          <Typography>Benrik - Trainer Autocad</Typography>
+        </Grid>
+
+        <Grid item xs={6} md={4} align="center">
+          <SupervisedUserCircleIcon
+            className={classes.image}
+          ></SupervisedUserCircleIcon>
+
+          <Typography>+ Puluhan Pengajar Praktisi Lainnya</Typography>
+        </Grid>
+      </Grid>
+    </div>
+  );
 }
 
 export default Teacher;
