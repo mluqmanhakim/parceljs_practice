@@ -8,6 +8,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import axios from "axios";
+import { useHistory, Link as LinkRoute, withRouter } from "react-router-dom";
 
 const styles = (theme) => ({
   content: {
@@ -42,6 +43,7 @@ class SignUpForm extends React.Component {
     const phone_number = this.state.phone_number;
     const email = this.state.email;
     const category = this.state.category;
+    const { history } = this.props;
 
     axios
       .post("http://127.0.0.1:8000/api/subscription-course-design", {
@@ -50,7 +52,9 @@ class SignUpForm extends React.Component {
         email,
         category,
       })
-      .then((response) => {});
+      .then((response) => {
+        history.push("/submit-lead-done");
+      });
   };
 
   render() {
@@ -129,11 +133,12 @@ class SignUpForm extends React.Component {
             </Typography>
 
             <Button
-              href="google.com"
+              href="https://pintaar.com/exclusive-packet/new"
               size="large"
               fullWidth
               variant="contained"
               color="primary"
+              target="_blank"
             >
               Saya Mau Belajar Sekarang
             </Button>
@@ -147,11 +152,12 @@ class SignUpForm extends React.Component {
             </Typography>
 
             <Button
-              href="#"
+              href="https://pintaar.com/scholarship"
               size="large"
               fullWidth
               variant="contained"
               color="primary"
+              target="_blank"
             >
               Saya Orang Kurang Mampu
             </Button>
@@ -166,4 +172,9 @@ class SignUpForm extends React.Component {
   }
 }
 
-export default withStyles(styles)(SignUpForm);
+function showSubmitLeadDonePage() {
+  const history = useHistory();
+  history.push("/submit-lead-done");
+}
+
+export default withRouter(withStyles(styles)(SignUpForm));
