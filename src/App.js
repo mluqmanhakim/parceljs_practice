@@ -1,6 +1,6 @@
 import React from "react";
-import SubscriptionCourseDesign from "./components/subscription_course_design/SubscriptionCourseDesign";
-import SubmitLeadDone from "./components/subscription_course_design/SubmitLeadDone";
+import SubscriptionCourseDesign from "./components/subscription-course-design/SubscriptionCourseDesign";
+import SubmitLeadDone from "./components/subscription-course-design/SubmitLeadDone";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import PageNotFound from "./components/page-not-found/PageNotFound";
 

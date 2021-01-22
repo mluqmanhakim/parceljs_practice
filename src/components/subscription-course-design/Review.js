@@ -1,24 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import SwiperCore, { Navigation, Pagination, Autoplay, A11y } from "swiper";
+import SwiperCore, { Pagination, Autoplay, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 
 // install Swiper components
-SwiperCore.use([Navigation, Pagination, Autoplay, A11y]);
+SwiperCore.use([Pagination, Autoplay, A11y]);
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    position: "relative",
+    backgroundColor: "#1976d2",
+    color: theme.palette.common.white,
+  },
   content: {
     padding: theme.spacing(6, 24),
     [theme.breakpoints.down("md")]: {
-      padding: theme.spacing(3, 0, 3),
+      padding: theme.spacing(3, 3, 3),
     },
   },
   image: {
@@ -32,15 +35,11 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "center",
     },
   },
-  title: {
-    [theme.breakpoints.down("md")]: {
-      padding: theme.spacing(3),
-    }
-  },
+  title: {},
   carouselContent: {
-    padding: theme.spacing(9),
+    padding: theme.spacing(6),
     [theme.breakpoints.down("md")]: {
-      padding: theme.spacing(4, 6, 4),
+      padding: theme.spacing(4, 0, 4),
     },
   },
 }));
@@ -80,65 +79,66 @@ function Review() {
   const classes = useStyles();
 
   return (
-    <div className={classes.content}>
-      <Grid
-        container
-        justify="center"
-        alignItems="center"
-        className={classes.title}
-      >
-        <Typography variant="h5" align="center">
-          Perkataan Teman Kamu Yang Telah Belajar di Pintaar
-        </Typography>
-      </Grid>
+    <div className={classes.root}>
+      <div className={classes.content}>
+        <Grid
+          container
+          justify="center"
+          alignItems="center"
+          className={classes.title}
+        >
+          <Typography variant="h5" align="center">
+            Perkataan Teman Kamu Yang Telah Belajar di Pintaar
+          </Typography>
+        </Grid>
 
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        navigation
-        autoplay={{
-          delay: 8000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        pagination={{ clickable: true }}
-      >
-        {reviews.map((review) => (
-          <SwiperSlide key={review.name}>
-            <div>
-              <div className={classes.carouselContent}>
-                <Grid
-                  container
-                  direction="column"
-                  alignItems="center"
-                  justify="center"
-                >
-                  <Grid item xs={12}>
-                    <Avatar
-                      className={classes.image}
-                      alt="Image"
-                      src={review.imageUrl}
-                    />
-                  </Grid>
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          autoplay={{
+            delay: 8000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          pagination={{ clickable: true }}
+        >
+          {reviews.map((review) => (
+            <SwiperSlide key={review.name}>
+              <div>
+                <div className={classes.carouselContent}>
+                  <Grid
+                    container
+                    direction="column"
+                    alignItems="center"
+                    justify="center"
+                  >
+                    <Grid item xs={12}>
+                      <Avatar
+                        className={classes.image}
+                        alt="Image"
+                        src={review.imageUrl}
+                      />
+                    </Grid>
 
-                  <Grid item xs={12}>
-                    <div className={classes.userName}>
-                      <Typography variant="h6" gutterBottom align="center">
-                        {review.name}
+                    <Grid item xs={12}>
+                      <div className={classes.userName}>
+                        <Typography variant="h6" gutterBottom align="center">
+                          {review.name}
+                        </Typography>
+                      </div>
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Typography gutterBottom align="center">
+                        {review.review}
                       </Typography>
-                    </div>
+                    </Grid>
                   </Grid>
-                  <Grid item xs={12}>
-                    <Typography gutterBottom align="center">
-                      {review.review}
-                    </Typography>
-                  </Grid>
-                </Grid>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 }

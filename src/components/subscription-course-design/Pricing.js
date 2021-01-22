@@ -67,7 +67,11 @@ class Pricing extends React.Component {
     // console.log(classes);
 
     if (this.state.isLoading) {
-      return <CircularProgress />;
+      return (
+        <Grid container justify="center">
+          <CircularProgress />
+        </Grid>
+      );
     }
 
     return (
