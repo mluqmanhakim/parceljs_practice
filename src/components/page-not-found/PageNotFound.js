@@ -4,11 +4,6 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "relative",
-    backgroundColor: "#1976d2",
-    color: theme.palette.common.white,
-  },
   content: {
     position: "relative",
     padding: theme.spacing(6, 24),
@@ -18,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Text2() {
+export default function PageNotFound() {
   const classes = useStyles();
 
   return (
@@ -26,15 +21,8 @@ export default function Text2() {
       <Grid container>
         <Grid item xs={12} md={12}>
           <div className={classes.content}>
-            <Typography variant="h5">
-              Kamu sudah belajar berhari-hari, atau bahkan berbulan-bulan
-              tentang desain, tetapi kenapa kamu masih bingung?
-              <br />
-              <br /> Bahkan dasarnya kamu tidak mengerti?
-              <br />
-              <br />
-              Oleh karena itu, disini kami bisa memberikan solusi untukmu, yaitu
-              dengan belajar online di Pintaar
+            <Typography component="h2" variant="h5" align="center">
+              404 Halaman tidak ditemukan. Silakan kembali.
             </Typography>
           </div>
         </Grid>

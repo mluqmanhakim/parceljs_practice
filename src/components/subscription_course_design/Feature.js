@@ -51,6 +51,7 @@ function Feature() {
                 <ImageIcon
                   className={classes.image}
                   style={{ fontSize: 100 }}
+                  color="primary"
                 ></ImageIcon>
               </Grid>
 
@@ -87,7 +88,7 @@ function Feature() {
                   <ListItemIcon>
                     <CheckBoxIcon />
                   </ListItemIcon>
-                  <ListItemText primary="Adobe Premier dan After Effects untuk edit video" />
+                  <ListItemText primary="Adobe Premiere Pro dan After Effects untuk edit video" />
                 </ListItem>
                 <ListItem>
                   <ListItemIcon>
@@ -107,6 +108,7 @@ function Feature() {
                 <FormatListNumberedIcon
                   className={classes.image}
                   style={{ fontSize: 100 }}
+                  color="primary"
                 ></FormatListNumberedIcon>
               </Grid>
 
@@ -130,24 +132,22 @@ function Feature() {
                 <VerifiedUserIcon
                   className={classes.image}
                   style={{ fontSize: 100 }}
+                  color="primary"
                 ></VerifiedUserIcon>
               </Grid>
 
               <Typography variant="h5" gutterBottom>
-                Dimentoring oleh Praktisi Berpengalaman
+                Diajarkan oleh Praktisi Berpengalaman
               </Typography>
 
               <Typography>
-                Semua kelas programming yang kamu dapatkan di ajarkan oleh{" "}
+                Materi kelas online di ajarkan oleh{" "}
                 <b>praktisi dan profesional di bidangnya.</b>
                 <br />
                 <br />
                 Sehingga, kamu bisa mengetahui apa yang dibutuhkan dengan
                 industri sekarang.
-                <br />
-                <br />
-                Bahkan, kamu juga mendapatkan kesempatan untuk{" "}
-                <b>bertanya ke mereka untuk konsultasi jika ada kebingungan.</b>
+                
               </Typography>
             </CardContent>
           </Card>
@@ -160,6 +160,7 @@ function Feature() {
                 <PeopleOutlineIcon
                   className={classes.image}
                   style={{ fontSize: 100 }}
+                  color="primary"
                 ></PeopleOutlineIcon>
               </Grid>
 
@@ -173,7 +174,7 @@ function Feature() {
                 <br />
                 Oleh karena itu, jika kamu mengambil kelasnya,{" "}
                 <b>
-                  kamu berhak masuk ke group Facebook khusus.
+                  kamu akan masuk ke group Facebook/Telegram.
                   <br /> <br />
                   Jumlah membernya sudah ribuan untuk belajar, berdiskusi dan
                   berkolaborasi dengan murid lainnya.
@@ -192,6 +193,7 @@ function Feature() {
                 <AccessAlarmIcon
                   className={classes.image}
                   style={{ fontSize: 100 }}
+                  color="primary"
                 ></AccessAlarmIcon>
               </Grid>
 
@@ -218,6 +220,7 @@ function Feature() {
                 <CollectionsIcon
                   className={classes.image}
                   style={{ fontSize: 100 }}
+                  color="primary"
                 ></CollectionsIcon>
               </Grid>
 
@@ -227,7 +230,7 @@ function Feature() {
 
               <Typography>
                 Kalau kamu mengambil kelas ini, kamu akan mendapatkan banyak
-                latihan serta studi kasus, yang membantumu belajar desain dengan
+                latihan/studi kasus, yang membantumu belajar desain dengan
                 baik
               </Typography>
             </CardContent>
@@ -241,6 +244,7 @@ function Feature() {
                 <CardMembershipIcon
                   className={classes.image}
                   style={{ fontSize: 100 }}
+                  color="primary"
                 ></CardMembershipIcon>
               </Grid>
 
@@ -263,6 +267,7 @@ function Feature() {
                 <LocalAtmIcon
                   className={classes.image}
                   style={{ fontSize: 100 }}
+                  color="primary"
                 ></LocalAtmIcon>
               </Grid>
 
@@ -271,11 +276,11 @@ function Feature() {
               </Typography>
 
               <Typography>
-                Kamu takut kelasnya tidak sesuai ekspetasi mu?
+                Kamu takut kelasnya tidak sesuai harapanmu?
                 <br />
                 <br />
-                Tenang, kami punya 100% uang garansi yang bisa kamu tuntut jika
-                kamu tidak puas dengan kelasnya.
+                Tenang, kamu bisa klaim garansi 100% uang kembali jika
+                kamu tidak puas/suka.
               </Typography>
             </CardContent>
           </Card>

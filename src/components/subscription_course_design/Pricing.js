@@ -49,6 +49,15 @@ class Pricing extends React.Component {
           isLoading: false,
           courses: response.data.data,
         });
+      })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log("Error", error.message);
+        }
       });
   }
 

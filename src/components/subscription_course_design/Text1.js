@@ -50,7 +50,7 @@ export default function Text1() {
                 <ListItemIcon>
                   <CheckBoxIcon />
                 </ListItemIcon>
-                <ListItemText primary="kamu ingin untuk mendesain / mempromosikan produk yang ada di bisnis kamu" />
+                <ListItemText primary="kamu ingin mendesain / mempromosikan produk yang ada di bisnis kamu" />
               </ListItem>
             </List>
 
@@ -69,15 +69,6 @@ export default function Text1() {
                   <CancelIcon />
                 </ListItemIcon>
                 <ListItemText primary="Tidak terstruktur, loncat-loncat, sehingga membuat bingung" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <CancelIcon />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Tidak ada tempat bertanya, kalau ada kesulitan atau
-                  kebingungan"
-                />
               </ListItem>
               <ListItem>
                 <ListItemIcon>

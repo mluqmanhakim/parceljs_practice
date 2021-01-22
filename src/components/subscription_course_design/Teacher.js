@@ -89,8 +89,8 @@ function Teacher() {
 
         <Grid item xs={6} md={4} align="center">
           <SupervisedUserCircleIcon
-            className={classes.image}
-          ></SupervisedUserCircleIcon>
+            className={classes.image} color="primary"
+          />
 
           <Typography>+ Puluhan Pengajar Praktisi Lainnya</Typography>
         </Grid>

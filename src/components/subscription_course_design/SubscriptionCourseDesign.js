@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { makeStyles } from "@material-ui/core/styles";
 import Pricing from "./pricing";
 import Feature from "./Feature";
 import Review from "./Review";
@@ -12,28 +10,42 @@ import Text3 from "./Text3";
 import Text4 from "./Text4";
 import SignUpForm from "./SignUpForm";
 import Footer from "./Footer";
+import {
+  createMuiTheme,
+  makeStyles,
+  ThemeProvider,
+} from "@material-ui/core/styles";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#1976d2",
+    },
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
-  root: {}
+  root: {},
 }));
 
 function SubscriptionCourseDesign() {
-
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Header />
-        <Text1/>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <Text1 />
         <Text2 />
         <Feature />
         <Text3 />
         <Review />
         <Teacher />
         <Text4 />
-      <Pricing />
-      <SignUpForm />
-      <Footer/>
+        <Pricing />
+        <SignUpForm />
+        <Footer />
+      </ThemeProvider>
     </div>
   );
 }

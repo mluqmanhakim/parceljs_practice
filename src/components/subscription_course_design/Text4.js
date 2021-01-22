@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
-    backgroundColor: theme.palette.info.main,
+    backgroundColor: "#1976d2",
     color: theme.palette.common.white,
   },
   content: {
